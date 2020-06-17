@@ -7,6 +7,7 @@ function App() {
     .then((resp) => console.log(resp));
   return (
     <div className="App">
+      <h1>Hello Project</h1>
     </div>
   );
 }
