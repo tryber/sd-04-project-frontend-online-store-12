@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class SearchBar extends React.Component {
+class SearchBar extends Component {
   render() {
     return (
       <div className="field">
         <input className="input is-rounded" type="text" />
-        <p data-testid='home-initial-message'
+        <p data-testid="home-initial-message"
            className="home-initial-message subtitle is-4">
            Digite algum termo de pesquisa ou escolha uma categoria.
         </p>
