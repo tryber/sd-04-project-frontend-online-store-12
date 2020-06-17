@@ -5,13 +5,15 @@ class SearchBar extends Component {
     return (
       <div className="field">
         <input className="input is-rounded" type="text" />
-        <p data-testid="home-initial-message"
-           className="home-initial-message subtitle is-4">
-           Digite algum termo de pesquisa ou escolha uma categoria.
+        <p
+          data-testid="home-initial-message"
+          className="home-initial-message subtitle is-4"
+        >
+          Digite algum termo de pesquisa ou escolha uma categoria.
         </p>
-    </div>
-    )
+      </div>
+    );
   }
 }
 
-export default SearchBar
+export default SearchBar;
