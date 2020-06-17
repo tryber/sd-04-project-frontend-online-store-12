@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 // import * as api from './services/api';
 import './App.css';
 import SearchBar from './components/SearchBar';
+import Carrinho from './components/Carrinho';
 
 function App() {
   // api.getCategories()
@@ -14,6 +15,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path="/" component={SearchBar} />
+          <Route exact path="/carrinho" component={Carrinho} />
         </Switch>
       </div>
     </Router>
