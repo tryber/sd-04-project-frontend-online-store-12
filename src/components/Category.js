@@ -4,18 +4,17 @@ class Category extends Component {
   render() {
     return (
       <Fragment>
-        <h4>Categorias:</h4>
         <div className="custom-control custom-checkbox">
           <input
             type="checkbox"
             className="custom-control-input"
-            id="defaultUnchecked"
+            id={this.props.category}
           />
           <label
             className="custom-control-label"
-            htmlFor="defaultUnchecked"
+            htmlFor={this.props.category}
           >
-                 Default unchecked
+            {this.props.category}
           </label>
         </div>
       </Fragment>
