@@ -10,9 +10,9 @@ class SearchBar extends Component {
     this.state = { category: [] };
   }
 
-  componentDidMount (){
+  componentDidMount() {
     getCategories().then((resp) => this.setState({ category: [resp] }));
-  };
+  }
 
   render() {
     return (
