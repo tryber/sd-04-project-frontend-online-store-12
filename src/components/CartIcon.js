@@ -4,7 +4,7 @@ class CartIcon extends Component {
   render() {
     return (
       <img
-        data-testid="shopping-cart-empty-message"
+        data-testid="shopping-cart-button"
         src="http://gg.gg/cart-icon"
         height="40"
         alt="Cart Icon"
