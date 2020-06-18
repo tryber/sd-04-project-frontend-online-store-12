@@ -7,10 +7,10 @@ import getCategories from '../services/api';
 class SearchBar extends Component {
   constructor() {
     super();
-    this.state = { category: [], }
-};
+    this.state = { category: [] };
+  }
 
-  componentDidMount(){
+  componentDidMount (){
     getCategories().then((resp) => this.setState({ category: [resp] }));
   };
 
@@ -24,7 +24,7 @@ class SearchBar extends Component {
           <div className="col-sm-2">
             <h4>Categorias:</h4>
             {this.state.category.length !== 0 ?
-              this.state.category[0].map((e) => <Category key={ e.id } category={ e.name }/>) :
+              this.state.category[0].map((e) => <Category key={e.id} category={e.name} />) :
               null
             }
           </div>
