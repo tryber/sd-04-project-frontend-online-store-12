@@ -11,8 +11,9 @@ class Category extends Component {
             className="custom-control-input"
             id="defaultUnchecked"
           />
-          <label className="custom-control-label"
-                 htmlFor="defaultUnchecked"
+          <label
+            className="custom-control-label"
+            htmlFor="defaultUnchecked"
           >
                  Default unchecked
           </label>
