@@ -15,7 +15,7 @@ class SearchBar extends Component {
             <Category />
           </div>
           <div className="col-sm-8">
-            <input className='form-control' type="text" />
+            <input className="form-control" type="text" />
             <p data-testid="home-initial-message" className="home-initial-message">
               Digite algum termo de pesquisa ou escolha uma categoria.
             </p>
@@ -24,7 +24,7 @@ class SearchBar extends Component {
             <Link to="/carrinho">
               <CartIcon />
             </Link>
-           </div>
+          </div>
         </div>
       </div>
     );

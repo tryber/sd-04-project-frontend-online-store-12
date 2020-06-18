@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Category extends Component {
   render() {
     return (
-      <>
+      <React.Fragment>
         <h4>Categorias:</h4>
         <div className="custom-control custom-checkbox">
           <input type="checkbox" className="custom-control-input" id="defaultUnchecked"/>
@@ -25,7 +25,7 @@ class Category extends Component {
           <input type="checkbox" className="custom-control-input" id="defaultUnchecked5"/>
           <label className="custom-control-label" for="defaultUnchecked5">Default unchecked</label>
         </div>
-      </>
+      </React.Fragment>
     );
   }
 }
