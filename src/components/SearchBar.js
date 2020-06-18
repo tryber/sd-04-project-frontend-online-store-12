@@ -18,7 +18,7 @@ class SearchBar extends Component {
     return (
       <div className="container">
         <div className="alert alert-primary" role="alert">
-          sd-04-project-frontend-online-store-12
+          <h3>sd-04-project-frontend-online-store-12</h3>
         </div>
         <div className="row">
           <div className="col-sm-2">
