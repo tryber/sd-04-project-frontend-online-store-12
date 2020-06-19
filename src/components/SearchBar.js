@@ -8,8 +8,15 @@ import * as api from '../services/api';
 class SearchBar extends Component {
   constructor(props) {
     super(props);
-    this.state = { query: '' };
+    this.state = {
+      query: '',
+      category: [],
+    };
     this.handleInput = this.handleInput.bind(this);
+  }
+
+  componentDidMount() {
+    api.getCategories().then((resp) => this.setState({ category: [resp] }));
   }
 
   handleInput(e) {
@@ -17,15 +24,18 @@ class SearchBar extends Component {
   }
 
   render() {
-    const { query } = this.state;
+    const { query, category } = this.state;
     return (
       <div className="container">
         <div className="alert alert-primary" role="alert">
-          sd-04-project-frontend-online-store-12
+          <h3>sd-04-project-frontend-online-store-12</h3>
         </div>
         <div className="row">
           <div className="col-sm-2">
-            <Category />
+            <h4>Categorias:</h4>
+            {category.length !== 0
+              ? category[0].map((e) => <Category key={e.id} category={e.name} />)
+              : null}
           </div>
           <div className="col-sm-8">
             <input
