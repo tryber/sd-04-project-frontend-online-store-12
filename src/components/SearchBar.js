@@ -24,8 +24,31 @@ class SearchBar extends Component {
     this.setState({ query: e.target.value });
   }
 
+  createInput() {
+    const { query } = this.state;
+    return (
+      <div className="col-sm-8">
+        <Input
+          test="query-input"
+          classe="form-control"
+          tipo="text"
+          valor={query}
+          onChange={this.handleInput}
+        />
+        <Botao
+          texto="Buscar"
+          onClick={api.getProductsFromCategoryAndQuery}
+          queryValue={query}
+        />
+        <p data-testid="home-initial-message" className="home-initial-message">
+          Digite algum termo de pesquisa ou escolha uma categoria.
+        </p>
+      </div>
+    );
+  }
+
   render() {
-    const { query, category } = this.state;
+    const { category } = this.state;
     return (
       <div className="container">
         <div className="alert alert-primary" role="alert">
@@ -34,19 +57,13 @@ class SearchBar extends Component {
         <div className="row">
           <div className="col-sm-2">
             <h4>Categorias:</h4>
-            {category.length !== 0
-              ? category[0].map((e) => <Category key={e.id} category={e.name} />)
-              : null}
+            {category.length && category[0].map((e) => <Category key={e.id} category={e.name} />)}
           </div>
-          <div className="col-sm-8">
-            <Input test="query-input" nomeClasse="form-control" tipo="text" valor={query} onChange={this.handleInput} />
-            <Botao texto="Buscar" onClick={api.getProductsFromCategoryAndQuery} queryValue={query} />
-            <p data-testid="home-initial-message" className="home-initial-message">
-              Digite algum termo de pesquisa ou escolha uma categoria.
-            </p>
-          </div>
+          {this.createInput()}
           <div className="col-sm-2">
-            <Link to="/carrinho"><CartIcon /></Link>
+            <Link to="/carrinho">
+              <CartIcon />
+            </Link>
           </div>
         </div>
       </div>

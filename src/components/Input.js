@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 class Input extends Component {
   render() {
-    const { test, nomeClasse, tipo, valor, onChange } = this.props;
+    const { test, classe, tipo, valor, onChange } = this.props;
     return (
       <div>
         <input
-          className={nomeClasse}
+          className={classe}
           data-testid={test}
           type={tipo}
           value={valor}
