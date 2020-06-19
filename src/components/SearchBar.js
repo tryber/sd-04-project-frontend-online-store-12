@@ -4,6 +4,7 @@ import CartIcon from './CartIcon';
 import Category from './Category';
 import Botao from './Botao';
 import * as api from '../services/api';
+import Input from './Input';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -38,26 +39,14 @@ class SearchBar extends Component {
               : null}
           </div>
           <div className="col-sm-8">
-            <input
-              data-testid="query-input"
-              className="form-control"
-              type="text"
-              value={query}
-              onChange={this.handleInput}
-            />
-            <Botao
-              texto="Buscar"
-              onClick={api.getProductsFromCategoryAndQuery}
-              queryValue={query}
-            />
+            <Input test="query-input" nomeClasse="form-control" tipo="text" valor={query} onChange={this.handleInput} />
+            <Botao texto="Buscar" onClick={api.getProductsFromCategoryAndQuery} queryValue={query} />
             <p data-testid="home-initial-message" className="home-initial-message">
               Digite algum termo de pesquisa ou escolha uma categoria.
             </p>
           </div>
           <div className="col-sm-2">
-            <Link to="/carrinho">
-              <CartIcon />
-            </Link>
+            <Link to="/carrinho"><CartIcon /></Link>
           </div>
         </div>
       </div>
