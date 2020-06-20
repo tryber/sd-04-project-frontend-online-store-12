@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Nav from './components/Nav';
 import Produtos from './components/Produtos';
-import Categoria from './components/Categoria';
+import Categorias from './components/Categorias';
 import Carrinho from './components/Carrinho';
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
           style={{ paddingTop: 30, paddingBottom: 30 }}
         >
           <div className="col s4">
-            <Categoria />
+            <Categorias />
           </div>
           <Switch>
             <Route exact path="/">
