@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+// import { BrowserRouter as Router } from 'react-router-dom';
 import KartLInk from './KartLInk';
 
 class Produtos extends Component {
@@ -15,9 +15,9 @@ class Produtos extends Component {
         <p data-testid="home-initial-message">
           Digite algum termo de pesquisa ou escolha uma categoria.
         </p>
-        <Router>
-          <KartLInk link="/carrinho" />
-        </Router>
+        {/* <Router> */}
+        <KartLInk link="/carrinho" />
+        {/* </Router> */}
       </div>
     );
   }

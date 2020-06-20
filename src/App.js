@@ -1,20 +1,36 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Nav from './components/Nav';
 import Produtos from './components/Produtos';
 import Categoria from './components/Categoria';
+import Carrinho from './components/Carrinho';
 
 function App() {
   return (
     <div>
-      <Nav />
-      <div className="container row" style={{ paddingTop: 30, paddingBottom: 30 }}>
-        <div className="col s4">
-          <Categoria />
+      <Router>
+        <Nav />
+        <div
+          className="container row"
+          style={{ paddingTop: 30, paddingBottom: 30 }}
+        >
+          <div className="col s4">
+            <Categoria />
+          </div>
+          <Switch>
+            <Route exact path="/">
+              <div className="col s8">
+                <Produtos />
+              </div>
+            </Route>
+            <Route exact path="/carrinho">
+              <div className="col s8">
+                <Carrinho />
+              </div>
+            </Route>
+          </Switch>
         </div>
-        <div className="col s8">
-          <Produtos />
-        </div>
-      </div>
+      </Router>
     </div>
   );
 }
