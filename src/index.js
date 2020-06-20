@@ -4,11 +4,13 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import Carrinho from './components/Carrinho';
 
 ReactDOM.render(
   <Router>
     <Switch>
       <Route exact path="/" component={App} />
+      <Route exact path="/carrinho" component={Carrinho} />
     </Switch>
   </Router>, document.getElementById('root'),
 );
