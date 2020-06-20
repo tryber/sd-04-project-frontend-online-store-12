@@ -1,7 +1,7 @@
 import React from 'react';
-import Nav from './Nav';
-import Produtos from './Produtos';
-import Categoria from './Categoria';
+import Nav from './components/Nav';
+import Produtos from './components/Produtos';
+import Categoria from './components/Categoria';
 
 function App() {
   return (
