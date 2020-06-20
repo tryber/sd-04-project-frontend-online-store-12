@@ -9,10 +9,10 @@ function App() {
       <Nav />
       <div className="container row" style={{ paddingTop: 30, paddingBottom: 30 }}>
         <div className="col s4">
-          <Categoria/>
+          <Categoria />
         </div>
         <div className="col s8">
-          <Produtos/>
+          <Produtos />
         </div>
       </div>
     </div>

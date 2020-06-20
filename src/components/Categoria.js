@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Category = (props) => {
+const Category = () => {
   return (
     <form action="#">
       <p>
@@ -27,12 +27,8 @@ const Category = (props) => {
         <input type="checkbox" id="test5" />
         <label htmlFor="test5">Red</label>
       </p>
-      <p>
-        <input type="checkbox" id="test6" />
-        <label htmlFor="test6">Red</label>
-      </p>
-   </form>
-  )
+    </form>
+  );
 }
 
 export default Category;

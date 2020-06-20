@@ -1,19 +1,18 @@
 import React from 'react';
 
-const Produtos = (props) => {
+const Produtos = () => {
   return (
-    <form onSubmit={props.handleSubmit} action="">
+    <form action="">
       <div className="input-field">
         <input
           placeholder="Search movie"
-          onChange={props.handleChange}
           id="first_name2"
           type="text"
           className="validate"
-          />
+        />
       </div>
     </form>
-  )
+  );
 }
 
 export default Produtos;
