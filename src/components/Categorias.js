@@ -16,12 +16,12 @@ class Categorias extends Component {
     const { categories } = this.state;
     if (categories) {
       return (
-        <form action="#">
+        <div>
           <fieldset>
             <h3>Categorias</h3>
             {categories.map(({ id, name }) => <Categoria key={id} sku={id} nome={name} />)}
           </fieldset>
-        </form>
+        </div>
       );
     }
     return <div>Texto</div>;
