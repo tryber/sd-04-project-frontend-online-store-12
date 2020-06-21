@@ -32,19 +32,13 @@ class App extends Component {
             </div>
             <Switch>
               <Route exact path="/">
-                <div className="col s7">
-                  <Produtos />
-                </div>
+                <Produtos handleChange={this.handleChange} />
               </Route>
               <Route exact path="/carrinho">
-                <div className="col s8">
-                  <Carrinho />
-                </div>
+                <Carrinho />
               </Route>
             </Switch>
-            <div className="col s2">
-              <KartLInk link="/carrinho" />
-            </div>
+            <KartLInk link="/carrinho" />
           </div>
         </Router>
       </div>
