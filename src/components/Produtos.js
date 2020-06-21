@@ -7,6 +7,7 @@ class Produtos extends Component {
     super(props);
     this.state = {
       searchTerm: '',
+      categoria: '',
       produtos: false,
     };
     this.handleInput = this.handleInput.bind(this);
@@ -18,8 +19,8 @@ class Produtos extends Component {
   }
 
   handleClick() {
-    const { searchTerm } = this.state;
-    api.getProductsFromCategoryAndQuery('', searchTerm)
+    const { searchTerm, categoria } = this.state;
+    api.getProductsFromCategoryAndQuery(categoria, searchTerm)
       .then((prod) => this.setState({ produtos: prod.results }));
   }
 
