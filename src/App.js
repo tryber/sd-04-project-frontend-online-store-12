@@ -15,7 +15,9 @@ function App() {
           style={{ paddingTop: 30, paddingBottom: 30 }}
         >
           <div className="col s4">
-            <Categorias />
+            <form action="#">
+              <Categorias />
+            </form>
           </div>
           <Switch>
             <Route exact path="/">

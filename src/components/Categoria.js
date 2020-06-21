@@ -1,19 +1,12 @@
 import React from 'react';
 
 const Categoria = ({ sku, nome }) => (
-  <div className="container row">
-    <label htmlFor={sku}>
-      <input
-        data-testid="category"
-        className="form-check-input"
-        type="radio"
-        value={nome}
-        id={sku}
-      />
-      {nome}
+  <p>
+    <label>
+      <input name="group1" id={sku} type="radio" />
+      <span>{nome}</span>
     </label>
-  </div>
+ </p>
 );
-
 
 export default Categoria;
