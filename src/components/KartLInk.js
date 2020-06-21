@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import KartIcon from './KartIcon';
 
 const KartLInk = ({ link }) => (
-  <Link to={link}>
-    <KartIcon />
-  </Link>
+  <div className="col s1">
+    <Link to={link}>
+      <KartIcon />
+    </Link>
+  </div>
 );
 
 export default KartLInk;

@@ -7,11 +7,9 @@ import Carrinho from './components/Carrinho';
 import KartLInk from './components/KartLInk';
 
 class App extends Component {
-  constructor(){
-    super()
-    this.state = {
-      searchTerm: '',
-    }
+  constructor(props){
+    super(props)
+    this.state = { searchTerm: '' };
   }
 
   handleChange = (e) => {
@@ -35,19 +33,13 @@ class App extends Component {
             </div>
             <Switch>
               <Route exact path="/">
-                <div className="col s8">
                   <Produtos handleChange={this.handleChange} />
-                </div>
               </Route>
               <Route exact path="/carrinho">
-                <div className="col s8">
-                  <Carrinho />
-                </div>
+                <Carrinho />
               </Route>
             </Switch>
-            <div className="col s1">
-              <KartLInk link="/carrinho" />
-            </div>
+            <KartLInk link="/carrinho" />
           </div>
         </Router>
       </div>
