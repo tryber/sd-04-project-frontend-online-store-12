@@ -7,7 +7,7 @@ class Produtos extends Component {
     super(props);
     this.state = {
       searchTerm: '',
-      categoria: '',
+      categoria: props.selectedCat, // Categoria selecionada.
       produtos: false,
     };
     this.handleInput = this.handleInput.bind(this);
@@ -26,7 +26,7 @@ class Produtos extends Component {
 
   render() {
     const { searchTerm, produtos } = this.state;
-    console.log(produtos);
+    // console.log(produtos);
     return (
       <div className="col s8">
         <div className="input-field">

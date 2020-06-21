@@ -9,17 +9,18 @@ import KartLInk from './components/KartLInk';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { searchTerm: '' };
-    this.handleChange = this.handleChange.bind(this);
+    this.state = { selectedCategorie: '' }; // searchTerm movido para produtos.
+    this.handleOnChange = this.handleOnChange.bind(this);
   }
 
-  handleChange(e) {
-    this.setState({ searchTerm: e.target.value });
+  handleOnChange(catId) {
+    console.log('Selecioando categoria com sucesso!');
+    this.setState({ selectedCategorie: catId });
   }
 
   render() {
-    const { searchTerm } = this.state;
-    console.log(searchTerm);
+    const { selectedCategorie } = this.state;
+    console.log(selectedCategorie);
     return (
       <div>
         <Router>
@@ -27,12 +28,12 @@ class App extends Component {
           <div className="row" style={{ paddingTop: 30, paddingBottom: 30 }}>
             <div className="col s3">
               <form action="#">
-                <Categorias />
+                <Categorias onChange={this.handleOnChange} />
               </form>
             </div>
             <Switch>
               <Route exact path="/">
-                <Produtos handleChange={this.handleChange} />
+                <Produtos selectedCat={selectedCategorie} />
               </Route>
               <Route exact path="/carrinho">
                 <Carrinho />

@@ -14,12 +14,15 @@ class Categorias extends Component {
 
   render() {
     const { categories } = this.state;
+    const { onChange } = this.props; // Função que veio do App.js
     if (categories) {
       return (
         <div>
           <fieldset>
             <h3>Categorias</h3>
-            {categories.map(({ id, name }) => <Categoria key={id} sku={id} nome={name} />)}
+            {categories.map(({ id, name }) => (
+              <Categoria key={id} sku={id} nome={name} onChange={onChange} />
+            ))}
           </fieldset>
         </div>
       );
