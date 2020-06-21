@@ -11,10 +11,7 @@ function App() {
     <div>
       <Router>
         <Nav />
-        <div
-          className="row"
-          style={{ paddingTop: 30, paddingBottom: 30 }}
-        >
+        <div className="row" style={{ paddingTop: 30, paddingBottom: 30 }}>
           <div className="col s3">
             <form action="#">
               <Categorias />
