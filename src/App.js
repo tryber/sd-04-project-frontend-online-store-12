@@ -10,10 +10,7 @@ function App() {
     <div>
       <Router>
         <Nav />
-        <div
-          className="container row"
-          style={{ paddingTop: 30, paddingBottom: 30 }}
-        >
+        <div className="container row" style={{ paddingTop: 30, paddingBottom: 30 }}>
           <div className="col s4">
             <Categorias />
           </div>
