@@ -54,7 +54,9 @@ class App extends Component {
               </Route>
               <Route
                 path="/product/:id"
-                render={(props) => (<ProdDetails {...props} />)} />
+                // eslint-disable-next-line react/jsx-props-no-spreading
+                render={(props) => (<ProdDetails {...props} />)}
+              />
             </Switch>
           </div>
         </Router>
