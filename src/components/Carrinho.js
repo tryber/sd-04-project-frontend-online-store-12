@@ -9,6 +9,10 @@ class Carrinho extends Component {
   }
 
   componentDidMount() {
+    this.setMyKart();
+  }
+
+  setMyKart() {
     if (localStorage.shoppingKart) {
       this.setState({ seusItems: JSON.parse(localStorage.shoppingKart) });
     }

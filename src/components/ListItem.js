@@ -19,6 +19,6 @@ const ListItem = (props) => {
       <SaveProd produto={prod} />
     </div>
   );
-}
+};
 
 export default ListItem;
