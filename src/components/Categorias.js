@@ -27,7 +27,7 @@ class Categorias extends Component {
         </div>
       );
     }
-    return <div>Texto</div>;
+    return <div>Carregando...</div>;
   }
 }
 

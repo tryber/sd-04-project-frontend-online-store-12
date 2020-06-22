@@ -52,11 +52,12 @@ class App extends Component {
               <Route exact path="/carrinho">
                 <Carrinho />
               </Route>
-              <Route
+              <Route path="/product/:id" component={ProdDetails} />
+              {/* <Route
                 path="/product/:id"
                 // eslint-disable-next-line react/jsx-props-no-spreading
                 render={(props) => (<ProdDetails {...props} />)}
-              />
+              /> */}
             </Switch>
           </div>
         </Router>

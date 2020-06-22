@@ -16,8 +16,6 @@ class ProdDetails extends Component {
 
   render() {
     const { prod } = this.state;
-    const { match: { params: { id } } } = this.props;
-    console.log(id);
     if (prod) {
       return (
         <div>
