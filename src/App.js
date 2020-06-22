@@ -25,7 +25,6 @@ class App extends Component {
   }
 
   handleOnChange(catId) {
-    console.log('Selecioando categoria com sucesso!');
     api.getProductsFromCategoryAndQuery(catId, '')
       .then((prod) => {
         this.setState({ selectedCat: catId, prods: prod.results });
@@ -34,7 +33,6 @@ class App extends Component {
 
   render() {
     const { selectedCat, prods } = this.state;
-    console.log(selectedCat, prods);
     return (
       <div>
         <Router>
@@ -48,12 +46,13 @@ class App extends Component {
             <Switch>
               <Route exact path="/">
                 <Produtos myCategorie={selectedCat} produtos={prods} click={this.handleClick} />
+                <KartLInk link="/carrinho" />
               </Route>
               <Route exact path="/carrinho">
                 <Carrinho />
               </Route>
+              <Route path="/product/:id" component="" />
             </Switch>
-            <KartLInk link="/carrinho" />
           </div>
         </Router>
       </div>
