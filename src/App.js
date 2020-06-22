@@ -26,19 +26,10 @@ class App extends Component {
 
   handleOnChange(catId) {
     console.log('Selecioando categoria com sucesso!');
-    // const { selectedCat } = this.state;
-    let filtrados = false;
     api.getProductsFromCategoryAndQuery(catId, '')
       .then((prod) => {
-        const filtered = prod.results.filter((item) => item.category_id === catId);
-        filtrados = filtered;
+        this.setState({ selectedCat: catId, prods: prod.results });
       });
-
-    // this.setState({ selectedCat: catId });
-    this.setState({
-      selectedCat: catId,
-      prods: filtrados,
-    });
   }
 
   render() {
