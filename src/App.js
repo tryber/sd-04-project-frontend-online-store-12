@@ -6,6 +6,7 @@ import Produtos from './components/Produtos';
 import Categorias from './components/Categorias';
 import Carrinho from './components/Carrinho';
 import KartLInk from './components/KartLInk';
+import ProdDetails from './components/ProdDetails';
 
 class App extends Component {
   constructor(props) {
@@ -51,7 +52,9 @@ class App extends Component {
               <Route exact path="/carrinho">
                 <Carrinho />
               </Route>
-              <Route path="/product/:id" component="" />
+              <Route
+                path="/product/:id"
+                render={(props) => (<ProdDetails {...props} />)} />
             </Switch>
           </div>
         </Router>

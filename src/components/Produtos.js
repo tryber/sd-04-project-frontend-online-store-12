@@ -25,7 +25,6 @@ class Produtos extends Component {
   render() {
     const { searchTerm } = this.state;
     const { produtos, click } = this.props;
-    console.log(produtos);
     return (
       <div className="col s8">
         <div className="input-field">
