@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SaveProd = (props) => {
-  const { produto } = props;
+  const { produto, test } = props;
 
   const addToCart = (prod) => {
     if (Storage) {
@@ -10,13 +10,12 @@ const SaveProd = (props) => {
       const newItems = [...shoppingKart, prod];
       localStorage.shoppingKart = JSON.stringify(newItems);
     }
-    console.log(prod);
   };
 
   return (
     <div>
       <button
-        data-testid="product-add-to-cart"
+        data-testid={test}
         type="button"
         onClick={() => addToCart(produto)}
       >

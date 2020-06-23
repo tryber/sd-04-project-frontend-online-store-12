@@ -16,7 +16,7 @@ const ListItem = (props) => {
       <Link to={`/product/${id}`} data-testid="product-detail-link">
         Ver Detalhes
       </Link>
-      <SaveProd produto={prod} />
+      <SaveProd test="product-add-to-cart" produto={prod} />
     </div>
   );
 };

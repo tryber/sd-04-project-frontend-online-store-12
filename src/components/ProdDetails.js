@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import getItemById from '../services/apiById';
 import KartLInk from './KartLInk';
+import SaveProd from './SaveProd';
 
 class ProdDetails extends Component {
   constructor(props) {
@@ -19,9 +20,10 @@ class ProdDetails extends Component {
     if (prod) {
       return (
         <div>
-          <KartLInk link="/" />
+          <KartLInk link="/carrinho" />
           <div>
-            <h1 data-testid="product-detail-name">{prod.title}</h1>
+            <h4 data-testid="product-detail-name">{prod.title}</h4>
+            <SaveProd test="product-detail-add-to-cart" produto={prod} />
           </div>
         </div>
       );
