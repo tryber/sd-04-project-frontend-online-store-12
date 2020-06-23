@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import KartLInk from './KartLInk';
+import ChangeQuants from './ChangeQuants';
 
 class Carrinho extends Component {
   constructor(props) {
@@ -18,10 +19,10 @@ class Carrinho extends Component {
     }
   }
 
-  countItem(identity) {
+  countItem(identity) { // função depreciada.
     const { seusItems } = this.state;
     const quantity = seusItems.filter((item) => item.id === identity).length;
-    return quantity;
+    return quantity; // Excluir essa função.
   }
 
   kartVerify() {
@@ -44,6 +45,9 @@ class Carrinho extends Component {
               data-testid="shopping-cart-product-quantity"
             >
               Quantidade: {item.quantidade}
+            </div>
+            <div>
+              <ChangeQuants />
             </div>
           </div>
         ))
