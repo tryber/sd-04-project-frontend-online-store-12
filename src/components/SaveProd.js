@@ -6,9 +6,20 @@ const SaveProd = (props) => {
   const addToCart = (prod) => {
     if (Storage) {
       if (!localStorage.shoppingKart) localStorage.shoppingKart = JSON.stringify([]);
-      const shoppingKart = JSON.parse(localStorage.shoppingKart);
-      const newItems = [...shoppingKart, prod];
-      localStorage.shoppingKart = JSON.stringify(newItems);
+      prod.quantidade = 1;
+      const noCarrinho = JSON.parse(localStorage.shoppingKart);
+      const existe = noCarrinho.some((item) => item.id === prod.id);
+
+      console.log('São igual?', existe); // Implemntar o increment de quantidade.
+      if (existe) {
+        const existente = noCarrinho.find((item) => item.id === prod.id);
+        const position = noCarrinho.indexOf(existente);
+        noCarrinho[position].quantidade += 1;
+        localStorage.shoppingKart = JSON.stringify(noCarrinho);
+      } else {
+        const newItems = [...noCarrinho, prod];
+        localStorage.shoppingKart = JSON.stringify(newItems);
+      }
     }
   };
 

@@ -34,17 +34,17 @@ class Carrinho extends Component {
       )
       : (
         seusItems.map((item) => (
-          <div key={item.title}>
-            <span
+          <div key={item.title} style={{ border: '1px solid black', padding: '10px' }}>
+            <div
               data-testid="shopping-cart-product-name"
             >
               {item.title}
-            </span>
-            <span
+            </div>
+            <div
               data-testid="shopping-cart-product-quantity"
             >
-              {this.countItem(item.id)}
-            </span>
+              Quantidade: {item.quantidade}
+            </div>
           </div>
         ))
       );
