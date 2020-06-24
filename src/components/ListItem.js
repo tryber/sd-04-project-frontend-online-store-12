@@ -10,18 +10,18 @@ const ListItem = (props) => {
     textOverflow: 'ellipsis',
     width: '250px',
     overflow: 'hidden',
-    whiteSpace: 'nowrap'
-}
+    whiteSpace: 'nowrap',
+  };
   return (
     <div className="col s12 m3 s3">
       <div className="card small center-align" data-testid="product">
         <p style={style}>{title}</p>
-            <img className="responsive-img" src={thumbnail} alt={title} />
+          <img className="responsive-img" src={thumbnail} alt={title} />
         <p>
           Price: R$
           {price.toFixed(2)}
         </p>
-        
+
         <Link to={`/product/${id}`} data-testid="product-detail-link">
           Detalhes
         </Link>
