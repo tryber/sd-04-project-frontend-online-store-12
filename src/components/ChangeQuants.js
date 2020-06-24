@@ -25,7 +25,6 @@ class ChangeQuants extends Component {
 
   render() {
     const { prod } = this.props;
-    console.log(this.props);
     return (
       <div>
         <button
