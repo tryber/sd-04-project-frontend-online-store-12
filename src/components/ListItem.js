@@ -16,7 +16,7 @@ const ListItem = (props) => {
     <div className="col s12 m3 s3">
       <div className="card small center-align" data-testid="product">
         <p style={style}>{title}</p>
-          <img className="responsive-img" src={thumbnail} alt={title} />
+        <img className="responsive-img" src={thumbnail} alt={title} />
         <p>
           Price: R$
           {price.toFixed(2)}
