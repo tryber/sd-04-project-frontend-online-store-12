@@ -46,9 +46,9 @@ class Produtos extends Component {
           <p data-testid="home-initial-message">
             Digite algum termo de pesquisa ou escolha uma categoria.
           </p>
-          <div>
-            {produtos && produtos.map((item) => <ListItem key={item.id} prod={item} />)}
-          </div>
+            <div className="services">
+                {produtos && produtos.map((item) => <ListItem key={item.id} prod={item} />)}
+            </div>
         </div>
       </div>
     );

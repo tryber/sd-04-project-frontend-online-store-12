@@ -18,6 +18,7 @@ const SaveProd = (props) => {
         data-testid={test}
         type="button"
         onClick={() => addToCart(produto)}
+        className="btn waves-effect waves-light"
       >
         Adicionar ao Carrinho
       </button>
