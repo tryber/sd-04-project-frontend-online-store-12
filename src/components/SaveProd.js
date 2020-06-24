@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { render } from '@testing-library/react';
 
 const atualizaItem = (carrinho, newProd) => {
   const noCarrinho = carrinho;
@@ -15,27 +14,25 @@ const addItem = (carrinho, newProd) => {
   localStorage.shoppingKart = JSON.stringify(newItems);
 };
 
+const verificaExistencia = (prod) => {
+  const newProd = prod; // Evitando atribuição de parâmetros.
+  newProd.quantidade = 1;
+  const noCarrinho = JSON.parse(localStorage.shoppingKart);
+  return noCarrinho.some((item) => item.id === newProd.id);
+};
+
+const addToCart = (prod) => {
+  const newProd = prod; // Evitando atribuição de parâmetros.
+  if (!localStorage.shoppingKart) localStorage.shoppingKart = JSON.stringify([]);
+  const noCarrinho = JSON.parse(localStorage.shoppingKart);
+  if (verificaExistencia(prod)) {
+    atualizaItem(noCarrinho, newProd);
+  } else {
+    addItem(noCarrinho, newProd);
+  }
+};
+
 class SaveProd extends Component {
-  constructor(props) {
-    super(props);
-    this.addToCart = this.addToCart.bind(this);
-  }
-
-  addToCart(prod) {
-    const newProd = prod; // Evitando atribuição de parâmetros.
-    if (Storage) {
-      if (!localStorage.shoppingKart) localStorage.shoppingKart = JSON.stringify([]);
-      newProd.quantidade = 1;
-      const noCarrinho = JSON.parse(localStorage.shoppingKart);
-      const existe = noCarrinho.some((item) => item.id === newProd.id);
-      if (existe) {
-        atualizaItem(noCarrinho, newProd);
-      } else {
-        addItem(noCarrinho, newProd);
-      }
-    }
-  }
-
   render() {
     const { produto, test } = this.props;
     return (
@@ -43,7 +40,7 @@ class SaveProd extends Component {
         <button
           data-testid={test}
           type="button"
-          onClick={() => this.addToCart(produto)}
+          onClick={() => addToCart(produto)}
         >
           Adicionar ao Carrinho
         </button>
