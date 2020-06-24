@@ -7,6 +7,7 @@ class Carrinho extends Component {
     super(props);
     this.state = { seusItems: [] };
     this.kartVerify = this.kartVerify.bind(this);
+    this.configureQuant = this.configureQuant.bind(this);
   }
 
   componentDidMount() {
@@ -16,6 +17,12 @@ class Carrinho extends Component {
   setMyKart() {
     if (localStorage.shoppingKart) {
       this.setState({ seusItems: JSON.parse(localStorage.shoppingKart) });
+    }
+  }
+
+  configureQuant(produtos) {
+    if (localStorage.shoppingKart) {
+      this.setState({ seusItems: produtos });
     }
   }
 
@@ -44,10 +51,10 @@ class Carrinho extends Component {
             <div
               data-testid="shopping-cart-product-quantity"
             >
-              Quantidade: {item.quantidade}
+              {`Quantidade: ${item.quantidade}`}
             </div>
             <div>
-              <ChangeQuants />
+              <ChangeQuants prod={item} setKart={this.configureQuant} items={seusItems} />
             </div>
           </div>
         ))
