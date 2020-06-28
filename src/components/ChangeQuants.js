@@ -12,6 +12,7 @@ class ChangeQuants extends Component {
     const alvo = produto;
     const pos = items.indexOf(alvo);
     items[pos].quantidade += 1;
+    localStorage.shoppingKart = JSON.stringify(items);
     setKart(items);
   }
 
@@ -20,6 +21,7 @@ class ChangeQuants extends Component {
     const alvo = produto;
     const pos = items.indexOf(alvo);
     items[pos].quantidade -= 1;
+    localStorage.shoppingKart = JSON.stringify(items);
     setKart(items);
   }
 
